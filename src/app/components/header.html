@@ -1,0 +1,92 @@
+<!-- Navbar -->
+<nav class="grid grid-cols-2 items-center p-5 bg-gray-800 text-white">
+  <div class="logo text-2xl pl-10 font-bold">
+    {{ appName }}
+  </div>
+
+  <ul class="flex justify-end pr-10 gap-6">
+    <li><a routerLink="/" class="text-green-300 hover:text-white">Home</a></li>
+    <li><a routerLink="/about" class="text-green-300 hover:text-white">Experience</a></li>
+    <li><a routerLink="/contact" class="text-green-300 hover:text-white">Portfolio</a></li>
+    <li><a routerLink="/contact" class="text-green-300 hover:text-white">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero contain -->
+<main class="">
+  <section class="p-20 text-8xl font-bold bg-gray-200 h-140">
+    <h1 class="pl-100">I'm</h1>
+    <h1 class="pl-100">Arbaa</h1>
+    <h1 class="pl-100">Shawla</h1>
+    <h2 class="pl-100 mt-10 text-3xl">Developer</h2>
+  </section>
+
+  <section class="p-20 text-5xl font-bold bg-cyan-200 h-140">
+    <h1 class="pl-133">01 Professional Tools</h1>
+    <div class="text-center">
+      <p class="text-3xl mt-4 font-normal">MY KNOWLEDGE LEVEL IN SOFTWARE</p>
+    </div>
+  </section>
+
+  <section class="p-20 text-5xl font-bold bg-amber-300 h-140">
+    <div class="text-center">
+      <h1 class="mt-4 font-bold">02 Portfolio</h1>
+    </div>
+  </section>
+
+  <section class="p-20 text-5xl font-bold bg-violet-400 h-140">
+    <div class="text-center">
+      <h1 class="font-bold">03. Experience</h1>
+    </div>
+  </section>
+
+  <section class="p-20 font-bold bg-gray-100 h-140">
+    <div class="text-center">
+      <h1 class="mt-4 text-3xl font-bold">Contact</h1>
+    </div>
+    <div class="">
+      <p-floatlabel variant="on">
+        <input
+          pInputText
+          id="on_label"
+          [(ngModel)]="value2"
+          autocomplete="off"
+          class="border-2 rounded-md"
+        />
+        <label for="on_label" class="text-xl">Name</label>
+      </p-floatlabel>
+      <p-floatlabel variant="on">
+        <input
+          pInputText
+          id="on_label"
+          [(ngModel)]="value2"
+          autocomplete="off"
+          class="border-2 rounded-md"
+        />
+        <label for="on_label" class="text-xl">Name</label>
+      </p-floatlabel>
+      <p-floatlabel variant="on">
+        <input
+          pInputText
+          id="on_label"
+          [(ngModel)]="value2"
+          autocomplete="off"
+          class="border-2 rounded-md"
+        />
+        <label for="on_label" class="text-xl">Name</label>
+      </p-floatlabel>
+    </div>
+    <textarea rows="5" cols="30" pTextarea [(ngModel)]="value2"></textarea>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-400 text-center py-6 text-sm">
+  <div class="mx-auto px-4">
+    <p>© 2035 by Arbaa Shawla. Powered and secured by Angular</p>
+    <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+    <i class="pi pi-spin pi-cog" style="font-size: 2rem"></i>
+  </div>
+</footer>
+
+<router-outlet />
