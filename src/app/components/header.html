@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav class="grid grid-cols-2 items-center p-5 bg-gray-800 text-white">
   <div class="logo text-2xl pl-10 font-bold">
-    {{ appName }}
+    <p-avatar label="{{ appName }}" shape="circle" size="xlarge" />
   </div>
 
   <ul class="flex justify-end pr-10 gap-6">
@@ -14,69 +14,319 @@
 
 <!-- Hero contain -->
 <main class="">
-  <section class="p-20 text-8xl font-bold bg-gray-200 h-140">
-    <h1 class="pl-100">I'm</h1>
-    <h1 class="pl-100">Arbaa</h1>
-    <h1 class="pl-100">Shawla</h1>
-    <h2 class="pl-100 mt-10 text-3xl">Developer</h2>
+  <section class="p-20 text-8xl font-bold h-220" style="height: 100vh; position: relative">
+    <!-- Image Comparison Overlaid as Background -->
+    <p-imagecompare
+      class="shadow-lg"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3"
+    >
+      <ng-template #left>
+        <img src="code.jpg" />
+      </ng-template>
+      <ng-template #right>
+        <img src="gameover.jpg" />
+      </ng-template>
+    </p-imagecompare>
+
+    <!-- Dark Overlay for Text Readability -->
+    <div
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2; /* Ensures text is above the overlay */
+      "
+    ></div>
+
+    <!-- Content Section -->
+    <div class="text-white" style="position: relative; z-index: 3">
+      <h1 class="pl-100">I'm</h1>
+      <h1 class="pl-100">Arbaa</h1>
+      <h1 class="pl-100">Shawla</h1>
+      <h2 class="pl-100 mt-10 text-3xl">Developer</h2>
+    </div>
   </section>
 
-  <section class="p-20 text-5xl font-bold bg-cyan-200 h-140">
-    <h1 class="pl-133">01 Professional Tools</h1>
+  <section class="bg-gray-700 text-white">
+    <h1 class="text-5xl pr-20 font-bold text-center p-10">01 Professional Tools</h1>
     <div class="text-center">
-      <p class="text-3xl mt-4 font-normal">MY KNOWLEDGE LEVEL IN SOFTWARE</p>
+      <p class="text-3xl font-normal">MY KNOWLEDGE LEVEL IN SOFTWARE</p>
+    </div>
+    <div class="flex justify-center p-4 pb-20 mt-5">
+      <div class="grid grid-cols-1 gap-4 text-gray-400">
+        <h1 class="font-bold text-3xl text-white">Skills</h1>
+        <div
+          class="card"
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+          leaveClass="animate-leave fade-out-0"
+        >
+          <!-- Menempatkan p-metergroup di bagian bawah -->
+          <p-metergroup [value]="value" class="mt-auto w-200" />
+        </div>
+        <div
+          class="card"
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+          leaveClass="animate-leave fade-out-0"
+        >
+          <!-- Menempatkan p-metergroup di bagian bawah -->
+          <p-metergroup [value]="value2" class="mt-auto w-200" />
+        </div>
+        <div
+          class="card"
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+          leaveClass="animate-leave fade-out-0"
+        >
+          <!-- Menempatkan p-metergroup di bagian bawah -->
+          <p-metergroup [value]="value3" class="mt-auto w-200" />
+        </div>
+        <div
+          class="card"
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+          leaveClass="animate-leave fade-out-0"
+        >
+          <!-- Menempatkan p-metergroup di bagian bawah -->
+          <p-metergroup [value]="value4" class="mt-auto w-200" />
+        </div>
+        <div
+          class="card"
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+          leaveClass="animate-leave fade-out-0"
+        >
+          <!-- Menempatkan p-metergroup di bagian bawah -->
+          <p-metergroup [value]="value5" class="mt-auto w-200" />
+        </div>
+        <div
+          class="card"
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+          leaveClass="animate-leave fade-out-0"
+        >
+          <!-- Menempatkan p-metergroup di bagian bawah -->
+          <p-metergroup [value]="value6" class="mt-auto w-200" />
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="p-20 text-5xl font-bold bg-amber-300 h-140">
-    <div class="text-center">
-      <h1 class="mt-4 font-bold">02 Portfolio</h1>
+  <section
+    class="p-3 h-200"
+    style="
+      background-image: url('bg-port.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
+    "
+  >
+    <div
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Atur nilai 0.5 untuk tingkat kegelapan */
+      "
+    ></div>
+    <div class="text-center" style="position: relative; z-index: 2">
+      <h1 class="mt-4 text-5xl text-white my-5 font-bold">02 Portfolio</h1>
+    </div>
+    <div class="flex justify-center" style="position: relative; z-index: 2">
+      <div
+        class="mb-4 p-8 flex items-center justify-center"
+        pAnimateOnScroll
+        enterClass="animate-enter fade-in-10 zoom-in-75 animate-duration-1000"
+      >
+        <p-card [style]="{ width: '30rem', overflow: 'hidden' }">
+          <ng-template #header>
+            <div style="position: relative">
+              <img alt="Card" class="w-full" src="/image.png" />
+              <div
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-color: rgba(0, 0, 0, 0.4);
+                  z-index: 1;
+                "
+              ></div>
+            </div>
+          </ng-template>
+          <ng-template #title> Strenvo </ng-template>
+          <ng-template #subtitle> Management Training App </ng-template>
+          <p class="text-sm">
+            This application allows coaches to manage athletes digitally, replacing paper-based
+            methods. It enables athlete profile management, daily session tracking, and physical
+            test monitoring, with progress displayed via bar charts. Built with Laravel, Inertia.js,
+            ReactJS, and Tailwind CSS, it also supports PWA functionality, Rule Based and fuzzy
+            logic for predict target and feedback system and uses TOPSIS for data-driven
+            decision-making.
+          </p>
+          <ng-template #footer>
+            <div class="flex gap-4">
+              <button
+                class="w-full bg-green-400 text-gray-900 font-bold py-3 rounded-full hover:bg-green-500 transition duration-300 mt-4"
+              >
+                View
+              </button>
+            </div>
+          </ng-template>
+        </p-card>
+      </div>
+      <div
+        class="mb-4 p-8 flex items-center justify-center"
+        pAnimateOnScroll
+        enterClass="animate-enter fade-in-10 zoom-in-50 animate-duration-1000"
+      >
+        <p-card [style]="{ width: '30rem', height: '34rem', overflow: 'hidden' }">
+          <ng-template #header>
+            <div style="position: relative">
+              <img alt="Card" class="w-full" src="card-2.png" />
+              <!-- Overlay Gelap pada Gambar -->
+              <div
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-color: rgba(0, 0, 0, 0.4);
+                  z-index: 1;
+                "
+              ></div>
+            </div>
+          </ng-template>
+          <ng-template #title> ThriftChest </ng-template>
+          <ng-template #subtitle> E-commerse Website </ng-template>
+          <p>
+            This application is for a student exhibition on campus as a major assignment in a web
+            programming course. This application was created using Laravel PHP, Bootstrap CSS, and
+            MySQL as the database.
+          </p>
+          <ng-template #footer>
+            <div class="flex gap-4 mt-7">
+              <button
+                class="w-full bg-green-400 text-gray-900 font-bold py-3 rounded-full hover:bg-green-500 transition duration-300 mt-4"
+              >
+                View
+              </button>
+            </div>
+          </ng-template>
+        </p-card>
+      </div>
+
+      <div
+        class="mb-4 p-8 flex items-center justify-center"
+        pAnimateOnScroll
+        enterClass="animate-enter fade-in-10 zoom-in-75 animate-duration-1000"
+      >
+        <p-card [style]="{ width: '30rem', height: '34rem', overflow: 'hidden' }">
+          <ng-template #header>
+            <img alt="Card" class="w-full" src="card-3.png" />
+          </ng-template>
+          <ng-template #title> Wedding Invitation </ng-template>
+          <ng-template #subtitle> Native Invitation App </ng-template>
+          <p>This application created by only reactjs tailwind and firebase as api json!</p>
+
+          <ng-template #footer>
+            <div class="flex gap-4 mt-23">
+              <button
+                class="w-full bg-green-400 text-gray-900 font-bold py-3 rounded-full hover:bg-green-500 transition duration-300 mt-4"
+              >
+                View
+              </button>
+            </div>
+          </ng-template>
+        </p-card>
+      </div>
     </div>
   </section>
 
-  <section class="p-20 text-5xl font-bold bg-violet-400 h-140">
-    <div class="text-center">
-      <h1 class="font-bold">03. Experience</h1>
+  <section class="p-10 bg-gray-900">
+    <div class="text-white">
+      <h1 class="font-bold text-5xl text-center p-5">03 Experience</h1>
+      <!-- ini pengalaman -->
+      <div class="flex justify-center mt-20 mb-10">
+        <p-timeline [value]="events" align="alternate" class="customized-timeline">
+          <ng-template #marker let-event>
+            <span
+              class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
+              [style]="{ 'background-color': event.color }"
+            >
+            </span>
+          </ng-template>
+          <ng-template #content let-event>
+            <p-card [header]="event.status" [subheader]="event.date">
+              <p>{{ event.about }}</p>
+            </p-card>
+          </ng-template>
+        </p-timeline>
+      </div>
     </div>
-  </section>
-
-  <section class="p-20 font-bold bg-gray-100 h-140">
-    <div class="text-center">
-      <h1 class="mt-4 text-3xl font-bold">Contact</h1>
+    <div class="flex items-center justify-center mb-20">
+      <div class="w-full max-w-4xl p-8 md:p-16 bg-[#1B263B] shadow-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-white">
+          <div>
+            <h1 class="text-4xl font-bold mb-4">CONTACT</h1>
+            <p class="text-sm md:text-base text-gray-300 mb-6 leading-relaxed">
+              I'm a Programmer. Click here to hire me. I'm wiling to work right now.
+            </p>
+            <div class="space-y-2 text-sm md:text-base">
+              <p class="text-green-400">info@mysite.com</p>
+              <p class="text-green-400">Tel: 1-800-000-0000</p>
+            </div>
+          </div>
+          <div>
+            <div class="mb-4">
+              <label for="email" class="text-sm font-semibold text-gray-400 mb-1 block"
+                >Email *</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="w-full bg-white border-b border-gray-500 py-2 focus:outline-none focus:border-white text-black p-2"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="phone" class="text-sm font-semibold text-gray-400 mb-1 block"
+                >Phone</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                class="w-full bg-white border-b border-gray-500 py-2 focus:outline-none focus:border-white text-black p-2"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="message" class="text-sm font-semibold text-gray-400 mb-1 block"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                rows="4"
+                class="w-full border-b border-gray-500 py-2 bg-white focus:outline-none focus:border-white text-black p-2"
+              ></textarea>
+            </div>
+            <button
+              class="w-full bg-green-400 text-gray-900 font-bold py-3 rounded-full hover:bg-green-500 transition duration-300"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+        <div class="flex justify-center mt-10 space-x-6 text-gray-400"></div>
+      </div>
     </div>
-    <div class="">
-      <p-floatlabel variant="on">
-        <input
-          pInputText
-          id="on_label"
-          [(ngModel)]="value2"
-          autocomplete="off"
-          class="border-2 rounded-md"
-        />
-        <label for="on_label" class="text-xl">Name</label>
-      </p-floatlabel>
-      <p-floatlabel variant="on">
-        <input
-          pInputText
-          id="on_label"
-          [(ngModel)]="value2"
-          autocomplete="off"
-          class="border-2 rounded-md"
-        />
-        <label for="on_label" class="text-xl">Name</label>
-      </p-floatlabel>
-      <p-floatlabel variant="on">
-        <input
-          pInputText
-          id="on_label"
-          [(ngModel)]="value2"
-          autocomplete="off"
-          class="border-2 rounded-md"
-        />
-        <label for="on_label" class="text-xl">Name</label>
-      </p-floatlabel>
-    </div>
-    <textarea rows="5" cols="30" pTextarea [(ngModel)]="value2"></textarea>
   </section>
 </main>
 
