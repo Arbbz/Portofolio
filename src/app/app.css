@@ -1,0 +1,209 @@
+:host {
+  @keyframes slidedown-icon {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .slidedown-icon {
+    animation: slidedown-icon;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+
+  .box {
+    background-image: radial-gradient(var(--primary-300), var(--primary-600));
+    border-radius: 50% !important;
+    color: var(--primary-color-text);
+  }
+}
+
+/* Typing Animation Styles */
+.typing-container {
+  display: inline-block;
+}
+
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 150px;
+  position: relative;
+}
+
+.typing-text::after {
+  content: '';
+  animation: typeAndDelete 10s infinite;
+  border-right: 2px solid;
+  animation: typeAndDelete 10s infinite, cursor 1s infinite;
+}
+
+@keyframes typeAndDelete {
+  /* Type "Developer" */
+  0% {
+    content: '';
+  }
+  5% {
+    content: 'D';
+  }
+  10% {
+    content: 'De';
+  }
+  15% {
+    content: 'Dev';
+  }
+  20% {
+    content: 'Deve';
+  }
+  25% {
+    content: 'Devel';
+  }
+  30% {
+    content: 'Develo';
+  }
+  35% {
+    content: 'Develop';
+  }
+  40% {
+    content: 'Develope';
+  }
+  45% {
+    content: 'Developer';
+  }
+
+  /* Pause on "Developer" */
+  50% {
+    content: 'Developer';
+  }
+
+  /* Delete "Developer" */
+  55% {
+    content: 'Develope';
+  }
+  57% {
+    content: 'Develop';
+  }
+  59% {
+    content: 'Develo';
+  }
+  61% {
+    content: 'Devel';
+  }
+  63% {
+    content: 'Deve';
+  }
+  65% {
+    content: 'Dev';
+  }
+  67% {
+    content: 'De';
+  }
+  69% {
+    content: 'D';
+  }
+  71% {
+    content: '';
+  }
+
+  /* Pause before typing next word */
+  73% {
+    content: '';
+  }
+
+  /* Type "QA Engineer" */
+  75% {
+    content: 'Q';
+  }
+  77% {
+    content: 'QA';
+  }
+  79% {
+    content: 'QA ';
+  }
+  81% {
+    content: 'QA E';
+  }
+  83% {
+    content: 'QA En';
+  }
+  85% {
+    content: 'QA Eng';
+  }
+  87% {
+    content: 'QA Engi';
+  }
+  89% {
+    content: 'QA Engin';
+  }
+  91% {
+    content: 'QA Engine';
+  }
+  93% {
+    content: 'QA Enginee';
+  }
+  95% {
+    content: 'QA Engineer';
+  }
+
+  /* Pause on "QA Engineer" then start deleting */
+  96% {
+    content: 'QA Engineer';
+  }
+  97% {
+    content: 'QA Enginee';
+  }
+  98% {
+    content: 'QA Engine';
+  }
+  99% {
+    content: 'QA Engin';
+  }
+  100% {
+    content: '';
+  }
+}
+
+.typing-cursor {
+  animation: blink 1s infinite;
+  color: white;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cursor {
+  0%,
+  50% {
+    border-color: transparent;
+  }
+  51%,
+  100% {
+    border-color: white;
+  }
+}
+
+/* Custom padding classes */
+.pl-10i0 {
+  padding-left: 100px;
+}
+.pl-100 {
+  padding-left: 100px;
+}
+.mt-10 {
+  margin-top: 40px;
+}

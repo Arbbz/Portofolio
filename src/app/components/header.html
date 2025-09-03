@@ -1,4 +1,5 @@
 <!-- Navbar -->
+
 <nav class="grid grid-cols-2 items-center p-5 bg-gray-800 text-white">
   <div class="logo text-2xl pl-10 font-bold">
     <p-avatar label="{{ appName }}" shape="circle" size="xlarge" />
@@ -21,10 +22,10 @@
       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3"
     >
       <ng-template #left>
-        <img src="code.jpg" />
+        <img src="gameover.jpg" />
       </ng-template>
       <ng-template #right>
-        <img src="gameover.jpg" />
+        <img src="code.jpg" />
       </ng-template>
     </p-imagecompare>
 
@@ -41,12 +42,14 @@
       "
     ></div>
 
-    <!-- Content Section -->
     <div class="text-white" style="position: relative; z-index: 3">
-      <h1 class="pl-100">I'm</h1>
+      <h1 class="pl-10i0">I'm</h1>
       <h1 class="pl-100">Arbaa</h1>
       <h1 class="pl-100">Shawla</h1>
-      <h2 class="pl-100 mt-10 text-3xl">Developer</h2>
+      <h2 class="pl-100 mt-10 text-3xl">
+        <span class="typing-container"> <span class="typing-text"></span> </span>
+        <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+      </h2>
     </div>
   </section>
 
@@ -64,7 +67,6 @@
           enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
           leaveClass="animate-leave fade-out-0"
         >
-          <!-- Menempatkan p-metergroup di bagian bawah -->
           <p-metergroup [value]="value" class="mt-auto w-200" />
         </div>
         <div
@@ -73,7 +75,6 @@
           enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
           leaveClass="animate-leave fade-out-0"
         >
-          <!-- Menempatkan p-metergroup di bagian bawah -->
           <p-metergroup [value]="value2" class="mt-auto w-200" />
         </div>
         <div
@@ -333,10 +334,63 @@
 <!-- Footer -->
 <footer class="bg-gray-800 text-gray-400 text-center py-6 text-sm">
   <div class="mx-auto px-4">
-    <p>© 2035 by Arbaa Shawla. Powered and secured by Angular</p>
-    <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
-    <i class="pi pi-spin pi-cog" style="font-size: 2rem"></i>
+    <p>© 2025 by Arbaa Shawla. Powered and secured by Angular</p>
   </div>
 </footer>
 
 <router-outlet />
+<script>
+  class TypingAnimation {
+    constructor(element, words, typeSpeed = 100, deleteSpeed = 50, pauseTime = 2000) {
+      this.element = element;
+      this.words = words;
+      this.typeSpeed = typeSpeed;
+      this.deleteSpeed = deleteSpeed;
+      this.pauseTime = pauseTime;
+      this.currentWordIndex = 0;
+      this.currentText = '';
+      this.isDeleting = false;
+
+      this.start();
+    }
+
+    start() {
+      this.type();
+    }
+
+    type() {
+      const currentWord = this.words[this.currentWordIndex];
+
+      if (this.isDeleting) {
+        // Deleting characters
+        this.currentText = currentWord.substring(0, this.currentText.length - 1);
+      } else {
+        // Typing characters
+        this.currentText = currentWord.substring(0, this.currentText.length + 1);
+      }
+
+      this.element.textContent = this.currentText;
+
+      let timeout = this.isDeleting ? this.deleteSpeed : this.typeSpeed;
+
+      if (!this.isDeleting && this.currentText === currentWord) {
+        // Finished typing current word, pause then start deleting
+        timeout = this.pauseTime;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.currentText === '') {
+        // Finished deleting, move to next word
+        this.isDeleting = false;
+        this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
+        timeout = 500; // Small pause before typing next word
+      }
+
+      setTimeout(() => this.type(), timeout);
+    }
+  }
+
+  // Initialize the typing animation
+  const typingElement = document.getElementById('typingText');
+  const words = ['Developer', 'QA Engineer'];
+
+  new TypingAnimation(typingElement, words, 150, 75, 2000);
+</script>

@@ -10,6 +10,8 @@ import { AvatarModule } from 'primeng/avatar';
 import { MeterGroup } from 'primeng/metergroup';
 import { Timeline } from 'primeng/timeline';
 import { ImageCompareModule } from 'primeng/imagecompare';
+import { TabsModule } from 'primeng/tabs';
+import { CommonModule } from '@angular/common';
 
 interface EventItem {
   status?: string;
@@ -22,6 +24,7 @@ interface EventItem {
 @Component({
   selector: 'app-header',
   templateUrl: './header.html',
+  styleUrl: '../app.css',
   imports: [
     ButtonModule,
     RouterOutlet,
@@ -34,37 +37,8 @@ interface EventItem {
     MeterGroup,
     Timeline,
     ImageCompareModule,
-  ],
-  styles: [
-    `
-      :host {
-        @keyframes slidedown-icon {
-          0% {
-            transform: translateY(0);
-          }
-
-          50% {
-            transform: translateY(20px);
-          }
-
-          100% {
-            transform: translateY(0);
-          }
-        }
-
-        .slidedown-icon {
-          animation: slidedown-icon;
-          animation-duration: 3s;
-          animation-iteration-count: infinite;
-        }
-
-        .box {
-          background-image: radial-gradient(var(--primary-300), var(--primary-600));
-          border-radius: 50% !important;
-          color: var(--primary-color-text);
-        }
-      }
-    `,
+    TabsModule,
+    CommonModule,
   ],
 })
 export class HeaderComponent {
@@ -89,14 +63,13 @@ export class HeaderComponent {
         date: '2023-2024',
         about:
           'Serving orders, creating offline and online orders, preparing food and beverages, maintaining cleanliness, and ensuring store standards',
-
         color: '#9C27B0',
       },
       {
         status: 'PT Telkom Indonesia',
         date: '1 October 2024 - 30 March 2025',
         about:
-          'I perform manual testing on both website and mobile platforms, covering both functional and non-functional aspects of the applications. I create detailed test case scenarios and actively participate in sprint planning, sprint reviews, deployments, and sanity testing. My responsibilities also include testing in both staging and production environments. Additionally, I document all tasks and test results in Jira, and I conduct API testing using tools such as Postman and Swagger.pi pi-check',
+          'I perform manual testing on both website and mobile platforms, covering both functional and non-functional aspects of the applications. I create detailed test case scenarios and actively participate in sprint planning, sprint reviews, deployments, and sanity testing. My responsibilities also include testing in both staging and production environments. Additionally, I document all tasks and test results in Jira, and I conduct API testing using tools such as Postman and Swagger.',
         color: '#607D8B',
       },
       {
